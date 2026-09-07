@@ -7,6 +7,8 @@ Programa
 .. code-block:: python
    :linenos:
 
+   import random
+
    TAMANHO = 10
 
    def main():
