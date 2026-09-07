@@ -90,14 +90,28 @@ Perguntas sobre o programa:
 
 **a)** Qual algoritmo realizou menos operações para 10 elementos?
 
+O Quick Sort, com 29 comparações e 19 trocas, contra 44 comparações e 19 trocas do Bubble Sort. As trocas ficaram empatadas, mas o Quick Sort precisou de menos comparações para chegar ao mesmo resultado.
+
 **b)** O comportamento permaneceu igual para 20 elementos?
+
+Sim, a tendência se manteve e ficou ainda mais evidente: o Bubble Sort saltou para 189 comparações e 84 trocas, enquanto o Quick Sort ficou em apenas 58 comparações e 43 trocas. A diferença entre os dois algoritmos aumentou proporcionalmente mais rápido para o Bubble Sort.
 
 **c)** O que aconteceu quando o tamanho aumentou para 1.000 elementos?
 
+A diferença se tornou drástica. O Bubble Sort realizou 499.122 comparações e 239.681 trocas, enquanto o Quick Sort realizou apenas 10.385 comparações e 5.850 movimentações
+
 **d)** Qual algoritmo apresentou maior crescimento da quantidade de operações?
+
+O Bubble Sort. Enquanto o array cresceu 100 vezes (de 10 para 1.000 elementos), suas comparações cresceram cerca de 11.000 vezes (de 44 para 499.122)
 
 **e)** Os resultados experimentais são coerentes com as complexidades teóricas estudadas?
 
+Sim. Para n=1.000, o Bubble Sort realizou 499.122 comparações, próximo de n² (1.000.000), e o Quick Sort realizou 10.385, próximo de n log₂n (≈9.970). Os dados confirmam as complexidades O(n²) e O(n log n).
+
 **f)** Em qual situação você escolheria Bubble Sort?
 
+Para fins didáticos, vetores muito pequenos ou já quase ordenados, onde seu melhor caso O(n) se aplica.
+
 **g)** Em qual situação você escolheria Quick Sort?
+
+Para aplicações reais com volumes de dados moderados a grandes, onde desempenho é prioridade.
