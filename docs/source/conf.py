@@ -6,8 +6,8 @@ sys.path.insert(0, os.path.abspath('.'))
 
 # Informações projeto
 project = 'Estrutura de Dados 2'
-copyright = '2026, Ciências da Computação, Sofia Estrela Bernardes, Alisson dos Reis'
-author = 'Sofia Estrela e Alisson dos Reis'
+copyright = '2026, Ciências da Computação, Sofia Estrela Bernardes'
+author = 'Sofia Estrela Bernardes'
 
 release = '2.0'
 version = '2.0'
