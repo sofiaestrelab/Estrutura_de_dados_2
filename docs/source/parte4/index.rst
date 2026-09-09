@@ -77,9 +77,9 @@ Programa
 Indice:          0     1     2     3     4     5     6     7     8     9 
 Temperatura:  19.5  21.0  18.2  25.3  20.0  22.1  17.8  24.4  23.6  20.9 
 
-Media: 21.28
+Média: 21.28
 Maior valor: 25.3 (indice 3)
 Menor valor: 17.8 (indice 6)
-Quantidade de valores acima da media: 4
+Quantidade de valores acima da média: 4
 
-Numero aproximado de operacoes de percurso realizadas: 48
+Número aproximado de operações de percurso realizadas: 48
