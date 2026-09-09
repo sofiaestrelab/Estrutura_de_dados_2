@@ -55,17 +55,17 @@ Lógica de Ordenação
 Complexidade Melhor Caso
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-O(n log n) — ocorre quando o pivô escolhido divide consistentemente o vetor em duas partições de tamanhos aproximadamente iguais a cada partição.
+**O(n log n)** — ocorre quando o pivô escolhido divide consistentemente o vetor em duas partições de tamanhos aproximadamente iguais a cada partição.
 
 Complexidade Médio Caso
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-O(n log n) — na prática, mesmo com escolhas de pivô não ideais, o algoritmo tende a se comportar de forma próxima ao caso ideal, o que o torna, em média, um dos algoritmos de ordenação mais rápidos.
+**O(n log n)** — na prática, mesmo com escolhas de pivô não ideais, o algoritmo tende a se comportar de forma próxima ao caso ideal, o que o torna, em média, um dos algoritmos de ordenação mais rápidos.
 
 Complexidade Pior Caso
 ~~~~~~~~~~~~~~~~~~~~~~
 
-O(n²) — ocorre quando o pivô escolhido é sistematicamente o menor ou o maior elemento da partição (por exemplo, ao ordenar um vetor já ordenado usando sempre o primeiro elemento como pivô), gerando partições extremamente desbalanceadas.
+**O(n²)** — ocorre quando o pivô escolhido é sistematicamente o menor ou o maior elemento da partição (por exemplo, ao ordenar um vetor já ordenado usando sempre o primeiro elemento como pivô), gerando partições extremamente desbalanceadas.
 
 Vantagens e Limitações:
 ~~~~~~~~~~~~~~~~~~~~~~~~
