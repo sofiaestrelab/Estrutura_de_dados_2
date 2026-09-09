@@ -1,7 +1,11 @@
 Quick Sort
 -----------
 
-O Quick Sort é um algoritmo de ordenação baseado na estratégia de "dividir para conquistar", ele seleciona um elemento como **pivô**, particiona o vetor de modo que os elementos menores que o pivô fiquem à sua esquerda e os maiores fiquem à sua direita, e então aplica recursivamente o mesmo processo às duas partições resultantes.
+O Quick Sort é um algoritmo de ordenação baseado na estratégia de **dividir para conquistar**, ele seleciona um elemento como **pivô**, particiona o vetor de modo que os elementos menores que o pivô fiquem à sua esquerda e os maiores fiquem à sua direita, e então aplica recursivamente o mesmo processo às duas partições resultantes.
+
+.. note::
+
+    O pivô funciona como uma âncora de comparação, ou seja, um elemento de referência escolhido para organizar o vetor.
 
 Exemplo de Pseudocódigo
 ~~~~~~~~~~~~~~~~~~~~~~~
