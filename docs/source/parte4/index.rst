@@ -1,7 +1,7 @@
 Investigação do Array
 =====================
 
-Programa
+Programa:
 ~~~~~~~~
 
 .. code-block:: python
