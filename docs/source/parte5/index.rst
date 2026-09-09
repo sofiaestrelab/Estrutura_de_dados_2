@@ -1,7 +1,7 @@
 Matriz Aplicada - Monitoramento de Sensores
 ============================================
 
-Programa
+Programa: 
 ~~~~~~~~
 
 .. code-block:: python
