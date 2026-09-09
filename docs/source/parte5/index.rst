@@ -54,8 +54,8 @@ Sensor 3: media = 25.12
 Sensor 4: media = 23.67
 
 Maior temperatura: 31.90 (sensor 1, hora 16h)
-Media geral: 23.67
+Média geral: 23.67
 
 Leituras acima do limite: 30
 
-Operacoes de percurso: 480
+Operações de percurso: 480
