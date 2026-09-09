@@ -1,6 +1,9 @@
 Matriz Aplicada - Monitoramento de Sensores
 ============================================
 
+Programa
+~~~~~~~~
+
 .. code-block:: python
    :linenos:
 
@@ -47,11 +50,11 @@ Matriz Aplicada - Monitoramento de Sensores
 
    print(f"\nOperacoes de percurso: {operacoes}")
 
-Sensor 0: media = 23.29
-Sensor 1: media = 22.51
-Sensor 2: media = 23.74
-Sensor 3: media = 25.12
-Sensor 4: media = 23.67
+- Sensor 0 : media = 23.29
+- Sensor 1 : media = 22.51
+- Sensor 2 : media = 23.74
+- Sensor 3 : media = 25.12
+- Sensor 4 : media = 23.67
 
 Maior temperatura: 31.90 (sensor 1, hora 16h)
 Média geral: 23.67
