@@ -48,7 +48,7 @@ Lógica de Ordenação
 
 - Compara o elemento na posição i com o elemento na posição i+1;
 - Se estiverem fora de ordem, realiza a troca (swap);
-- Repete esse processo até o fim do vetor, completando uma "passagem";
+- Repete esse processo até o fim do vetor, completando uma **passagem**;
 - Repete as passagens até que nenhuma troca seja necessária, indicando que o vetor está ordenado;
 - Uma otimização comum é usar uma flag (ex: trocou = False) para encerrar o algoritmo antecipadamente caso uma passagem completa não realize nenhuma troca.
 
