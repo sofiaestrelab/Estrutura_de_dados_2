@@ -4,6 +4,24 @@ Bubble Sort
 O Bubble Sort é um algoritmo de ordenação simples que organiza os elementos de uma lista comparando pares de elementos vizinhos e trocando-os de posição quando estão fora de ordem. 
 A cada passagem completa pela lista, o maior (ou menor, dependendo do critério) elemento **flutua** gradualmente até sua posição correta, de forma semelhante a uma bolha subindo à superfície.
 
+**Exemplo**
+
+ Considerando:
+
+ 5  3  8  1
+
+ Primeira passagem:
+
+ 5 3 → troca → 3 5
+ 3 8 → não troca
+ 8 1 → troca → 1 8
+
+ Resultado parcial:
+
+ 3 5 1 8
+
+ O processo continua até que todos os elementos estejam ordenados.
+
 Exemplo Pseudocódigo
 ~~~~~~~~~~~~~~~~~~~~
 
