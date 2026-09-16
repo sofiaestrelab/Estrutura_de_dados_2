@@ -73,13 +73,86 @@ Programa:
    if __name__ == "__main__":
        main()
 
+Exemplo de execução
+-------------------
 
-Indice:          0     1     2     3     4     5     6     7     8     9 
-Temperatura:  19.5  21.0  18.2  25.3  20.0  22.1  17.8  24.4  23.6  20.9 
+Considerando as temperaturas:
 
-Média: 21.28
-Maior valor: 25.3 (indice 3)
-Menor valor: 17.8 (indice 6)
-Quantidade de valores acima da média: 4
+.. list-table::
+   :header-rows: 1
+   :widths: 20 30
 
-Número aproximado de operações de percurso realizadas: 48
+   * - Índice
+     - Temperatura
+   * - 0
+     - 19,5 °C
+   * - 1
+     - 21,0 °C
+   * - 2
+     - 18,2 °C
+   * - 3
+     - 25,3 °C
+   * - 4
+     - 20,0 °C
+   * - 5
+     - 22,1 °C
+   * - 6
+     - 17,8 °C
+   * - 7
+     - 24,4 °C
+   * - 8
+     - 23,6 °C
+   * - 9
+     - 20,9 °C
+
+Resultados
+----------
+
+* **Média:** 21,28 °C
+* **Maior temperatura:** 25,3 °C
+* **Índice do maior:** 3
+* **Menor temperatura:** 17,8 °C
+* **Índice do menor:** 6
+* **Valores acima da média:** 4
+
+Quantidade de operações
+-----------------------
+
+O programa realiza aproximadamente **58 operações contabilizadas**, considerando os acessos aos elementos do array e as comparações realizadas durante o processamento.
+
+Esse número representa o critério de contagem adotado no experimento. Outras formas de contabilizar operações podem produzir valores diferentes.
+
+A contagem pode ser dividida da seguinte forma:
+
+* 10 acessos para receber as temperaturas;
+* 10 acessos para exibir os valores;
+* 10 acessos para calcular a média;
+* 9 comparações para encontrar o maior valor;
+* 9 comparações para encontrar o menor valor;
+* 10 comparações para verificar os valores acima da média.
+
+Total:
+
+.. math::
+
+   10 + 10 + 10 + 9 + 9 + 10 = 58
+
+Complexidade
+------------
+
+O algoritmo possui complexidade **O(n)**.
+
+Isso ocorre porque os principais procedimentos percorrem o array de forma linear. Mesmo existindo vários ``for``, eles são executados separadamente e cada um percorre uma quantidade proporcional a ``n``.
+
+Como o array possui apenas 10 posições, o número de operações é pequeno. Porém, se o tamanho do array aumentasse, a quantidade de operações também aumentaria proporcionalmente.
+
+A relação pode ser representada da seguinte forma:
+
+.. code-block:: text
+
+   Aumento do tamanho do array
+               ↓
+      Aumento das operações
+               ↓
+          Complexidade O(n)
+
