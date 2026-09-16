@@ -1,81 +1,105 @@
 Análise e Conclusão
-===================
+====================
 
-Ao longo desta atividade, foram desenvolvidos e testados experimentalmente
-diferentes algoritmos e estruturas de dados — ordenação (Bubble Sort e Quick
-Sort), busca sequencial em matriz, manipulação de arrays unidimensionais
-(temperaturas) e matrizes bidimensionais (sensores). Em todos os casos, a
-proposta não foi apenas implementar os algoritmos, mas **medir, comparar e
-interpretar** a quantidade de operações realizadas — comparações, trocas e
-percursos — permitindo observar, na prática, conceitos que muitas vezes são
-discutidos apenas de forma teórica.
+Ao longo desta atividade, foram implementados e analisados diferentes
+algoritmos e estruturas de dados, incluindo os métodos de ordenação Bubble
+Sort e Quick Sort, a busca sequencial em matrizes, o uso de arrays
+unidimensionais para o armazenamento de temperaturas e matrizes
+bidimensionais para representar dados de sensores.
+
+Além de verificar se os algoritmos produziam os resultados esperados, foram
+observadas e contabilizadas diferentes operações, como comparações, trocas e
+percursos pelos elementos. Dessa forma, foi possível relacionar os resultados
+obtidos na prática com os conceitos de complexidade de algoritmos estudados
+teoricamente.
+
 
 O aumento do tamanho da estrutura de dados influencia a quantidade de operações?
---------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
 
-Sim, e de forma bastante evidente em todos os experimentos realizados. Na
-busca sequencial em matriz, o número de comparações no pior caso cresceu
-exatamente na mesma proporção do número de elementos: de 4 (matriz 2×2) para
-100 (matriz 10×10) e para 10.000 (matriz 100×100) — um crescimento
-diretamente ligado ao produto m × n. Nos algoritmos de ordenação, o efeito
-foi ainda mais expressivo: ao aumentar o array de 10 para 1.000 elementos
-(100 vezes maior), o Bubble Sort passou de 44 para 499.122 comparações — um
-crescimento de mais de 11.000 vezes. Isso confirma que **o tamanho da
-entrada é o principal fator que determina o custo computacional** de um
-algoritmo, mas também mostra que **a forma como esse custo cresce depende
-diretamente da complexidade do algoritmo**, e não apenas do tamanho dos
-dados.
+Sim. Os experimentos demonstraram que o aumento da quantidade de elementos
+provoca um aumento no número de operações realizadas.
+
+Na busca sequencial em matrizes, por exemplo, uma matriz de 2×2 possui apenas
+4 elementos, enquanto uma matriz de 10×10 possui 100 e uma matriz de 100×100
+possui 10.000 elementos. No pior caso, quando o valor procurado está na
+última posição ou não está presente, é necessário verificar todos os
+elementos da matriz. Por isso, a quantidade de comparações cresce de acordo
+com o número total de posições, representado por ``m × n``.
+
+Nos algoritmos de ordenação, também foi possível observar um aumento
+significativo das operações conforme o tamanho do array aumentou. No
+experimento realizado, o Bubble Sort apresentou um crescimento muito maior
+na quantidade de comparações do que o Quick Sort para conjuntos de dados
+maiores.
+
+Esses resultados mostram que o tamanho da entrada influencia diretamente o
+custo de execução. Entretanto, o impacto desse aumento também depende da
+complexidade do algoritmo utilizado.
+
 
 Bubble Sort e Quick Sort crescem da mesma maneira quando o número de elementos aumenta?
----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
 
-Não. Esse foi um dos pontos mais claros observados no experimento de
-ordenação. Para entradas pequenas (10 e 20 elementos), a diferença entre os
-dois algoritmos era perceptível, mas não drástica. À medida que o tamanho do
-array aumentou para 1.000 elementos, porém, a diferença se tornou enorme: o
-Bubble Sort realizou quase 50 vezes mais comparações que o Quick Sort
-(499.122 contra 10.385). Isso acontece porque os dois algoritmos possuem
-**complexidades assintóticas diferentes** — O(n²) para o Bubble Sort e
-O(n log n) para o Quick Sort (em média) —, e essa diferença só se torna
-visível de forma acentuada quando o volume de dados é suficientemente
-grande. Ou seja, **algoritmos com complexidades diferentes crescem em
-ritmos diferentes**, e quanto maior a entrada, mais essa diferença se
-amplia — um comportamento que a notação Big O descreve exatamente para
-isso: prever como o custo se comporta no limite, e não em casos pontuais e
-pequenos.
+Não. Os dois algoritmos apresentam formas diferentes de crescimento.
+
+O Bubble Sort possui complexidade ``O(n²)`` nos casos médio e pior, enquanto o
+Quick Sort apresenta complexidade média ``O(n log n)``. Por esse motivo, a
+diferença entre os algoritmos tende a ficar mais evidente conforme a
+quantidade de elementos aumenta.
+
+Nos testes realizados, essa diferença foi observada principalmente no array
+com 1.000 elementos. O Bubble Sort realizou uma quantidade muito maior de
+comparações, enquanto o Quick Sort apresentou um número menor de operações.
+
+Isso demonstra, na prática, que algoritmos com diferentes complexidades
+podem apresentar comportamentos bastante distintos quando aplicados a
+conjuntos de dados maiores. Em entradas pequenas, essa diferença pode ser
+menos perceptível, mas tende a aumentar conforme o tamanho da entrada cresce.
+
 
 Por que analisar somente o resultado final da ordenação não é suficiente para comparar algoritmos?
---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 
-Porque o resultado final — o array ordenado — é **idêntico** para qualquer
-algoritmo correto, independentemente de sua eficiência. Bubble Sort e Quick
-Sort, aplicados aos mesmos dados, produzem exatamente a mesma saída (foi
-inclusive validado nos testes com ``assert``). Se a análise se limitasse a
-conferir se o vetor está ordenado corretamente, os dois algoritmos
-pareceriam equivalentes — quando, na realidade, um deles pode ser dezenas
-ou centenas de vezes mais custoso que o outro para a mesma tarefa. É
-justamente por isso que esta atividade priorizou a contagem de
-**operações internas** (comparações, trocas, percursos) em vez de apenas
-validar a saída: são essas métricas que revelam o verdadeiro custo do
-processamento, especialmente quando o volume de dados cresce. Em
-aplicações reais, essa diferença se traduz diretamente em tempo de
-execução, consumo de recursos e escalabilidade — aspectos que passam
-despercebidos se a avaliação for baseada apenas em "o resultado está
-certo?".
+Analisar somente o resultado final não é suficiente porque diferentes
+algoritmos podem produzir exatamente o mesmo resultado, mas utilizar
+quantidades diferentes de operações para chegar até ele.
+
+No caso do Bubble Sort e do Quick Sort, ambos conseguem ordenar corretamente
+o mesmo conjunto de dados. Portanto, observar apenas o array final não
+permite identificar qual algoritmo realizou mais comparações ou trocas.
+
+Por isso, durante a atividade também foram analisadas as operações internas
+dos algoritmos. Essa análise permite compreender melhor o custo de cada
+método e observar como seu comportamento muda conforme o tamanho da entrada.
+
+Dessa forma, a corretude do resultado é importante, mas não é o único fator
+que deve ser considerado. A quantidade de operações e a forma como elas
+crescem com o tamanho dos dados também são importantes para analisar a
+eficiência de um algoritmo.
+
 
 Conclusão geral
-----------------
+---------------
 
-Os experimentos realizados ao longo desta atividade — desde a ordenação de
-arrays até a manipulação de matrizes bidimensionais — reforçam, de forma
-prática, um princípio central da Ciência da Computação: **a eficiência de
-um algoritmo não pode ser avaliada apenas pela corretude do resultado, mas
-pela forma como o custo de execução se comporta à medida que o volume de
-dados cresce**. A análise de complexidade computacional (Big O) não é um
-exercício abstrato: ela descreve, com precisão, padrões de crescimento que
-foram efetivamente observados nos dados coletados — seja no crescimento
-quadrático do Bubble Sort e da busca sequencial em matrizes, seja no
-crescimento log-linear do Quick Sort. Compreender essa relação é essencial
-para escolher a estrutura de dados e o algoritmo mais adequados para cada
-contexto, equilibrando simplicidade, uso de memória e desempenho conforme
-as exigências reais de cada aplicação.
+Os experimentos realizados permitiram observar, na prática, a relação entre
+o tamanho dos dados, a quantidade de operações e a complexidade dos
+algoritmos.
+
+A busca sequencial em matrizes apresentou crescimento proporcional à
+quantidade de elementos no pior caso, enquanto o Bubble Sort apresentou um
+crescimento mais acentuado devido à sua complexidade ``O(n²)``. Já o Quick
+Sort apresentou, nos testes realizados, um crescimento menor, compatível com
+sua complexidade média ``O(n log n)``.
+
+A análise dos arrays e das matrizes também mostrou a importância dos índices,
+dos loops e dos diferentes tipos de percurso para acessar e processar os
+dados. Assim, foi possível perceber que a escolha de um algoritmo não deve
+considerar apenas se ele produz o resultado correto, mas também como seu
+custo de execução se comporta conforme a quantidade de dados aumenta.
+
+Portanto, a atividade contribuiu para compreender de forma prática conceitos
+de estruturas de dados, ordenação, busca, contagem de operações e
+complexidade computacional. Esses conceitos são importantes para desenvolver
+programas mais organizados e compreender as consequências do crescimento do
+volume de dados durante a execução de um algoritmo.
