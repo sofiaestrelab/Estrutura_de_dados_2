@@ -7,55 +7,63 @@ O Quick Sort é um algoritmo de ordenação baseado na estratégia de **dividir 
 
     O pivô funciona como uma âncora de comparação, ou seja, um elemento de referência escolhido para organizar o vetor.
 
+**Exemplo**
+
+ Array:
+
+ 8  3  5  1  7
+
+ Escolhendo 7 como pivô:
+ 
+ 3 5 1 | 7 | 8
+
+ Depois, as partes da esquerda e da direita são ordenadas recursivamente.
+
 Exemplo de Pseudocódigo
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
    :linenos:
 
-   def quick_sort(vetor, inicio=0, fim=None, comparacoes=0, trocas=0):
-       if fim is None:
-           fim = len(vetor) - 1
+   def quick_sort(vetor, inicio, fim):
 
-       if inicio < fim:
-           # Particiona o vetor e obtém a posição final do pivô
-           posicao_pivo, comparacoes, trocas = particionar(vetor, inicio, fim, comparacoes, trocas)
+    # Verifica se ainda existem elementos para ordenar
+    if inicio < fim:
 
-           # Ordena recursivamente os elementos antes e depois do pivô
-           _, comparacoes, trocas = quick_sort(vetor, inicio, posicao_pivo - 1, comparacoes, trocas)
-           _, comparacoes, trocas = quick_sort(vetor, posicao_pivo + 1, fim, comparacoes, trocas)
+        # Escolhe o último elemento como pivô
+        posicao_pivo = particionar(vetor, inicio, fim)
 
-       return vetor, comparacoes, trocas
+        # Ordena a parte esquerda
+        quick_sort(vetor, inicio, posicao_pivo - 1)
 
-
-   def particionar(vetor, inicio, fim, comparacoes, trocas):
-       pivo = vetor[fim]  # Escolhe o último elemento como pivô
-       i = inicio - 1      # Índice do menor elemento
-
-       for j in range(inicio, fim):
-           comparacoes += 1
-
-           if vetor[j] <= pivo:
-               i += 1
-               vetor[i], vetor[j] = vetor[j], vetor[i]
-               trocas += 1
-
-       # Coloca o pivô na posição correta
-       vetor[i + 1], vetor[fim] = vetor[fim], vetor[i + 1]
-       trocas += 1
-
-       return i + 1, comparacoes, trocas
+        # Ordena a parte direita
+        quick_sort(vetor, posicao_pivo + 1, fim)
 
 
-   # Exemplo de uso
-   if __name__ == "__main__":
-       dados = [5, 3, 8, 1, 9, 2]
+    def particionar(vetor, inicio, fim):
 
-       ordenado, num_comparacoes, num_trocas = quick_sort(dados)
+        # O último elemento será o pivô
+        pivo = vetor[fim]
+    
+        # Índice da posição dos elementos menores
+        i = inicio - 1
 
-       print("Vetor ordenado:", ordenado)
-       print("Número de comparações:", num_comparacoes)
-       print("Número de trocas:", num_trocas)
+        # Percorre os elementos antes do pivô
+        for j in range(inicio, fim):
+
+        # Se o elemento for menor ou igual ao pivô
+        if vetor[j] <= pivo:
+
+            i = i + 1
+
+            # Troca os elementos
+            vetor[i], vetor[j] = vetor[j], vetor[i]
+
+    # Coloca o pivô em sua posição correta
+    vetor[i + 1], vetor[fim] = vetor[fim], vetor[i + 1]
+
+    # Retorna a posição final do pivô
+    return i + 1
 
 Lógica de Ordenação
 ~~~~~~~~~~~~~~~~~~~~
